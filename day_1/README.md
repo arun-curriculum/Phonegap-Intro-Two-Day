@@ -41,3 +41,74 @@ cordova create hello com.example.hello HelloWorld
 ##Cordova Plugins
 - Plugins are the modules of code that allow you to write JS commands that trigger native actions.
 - Most of the major native functionality is wrapped into various plugins, such as accessing the camera or pulling from the GPS.
+- Let's take a look at the plugin registry to see what's available to use. It can be found [here](http://cordova.apache.org/docs/en/4.0.0/cordova_plugins_pluginapis.md.html).
+
+##Building Your App
+- Building the app is pretty trivial if you have all of the utilities set up.
+- There are a couple of command line tools to help us with this:
+
+```
+cordova build ios
+cordova build android
+```
+
+- Building for iOS will use Xcode's compiler to compile the app whereas building for Android will trigger Ant for compilation.
+- If the build succeeds you should be able to now emulate the app:
+
+```
+cordova emulate ios
+cordova emulate android
+```
+
+- This will attempt to open the default emulator for the build type. This works well on Android but requires additional software for iOS.
+- It is recommended to work through Xcode when running and debugging iOS apps.
+
+##Using the Device Camera
+- Let's take a look at the documentation [here](http://plugins.cordova.io/#/package/org.apache.cordova.camera).
+- We need to first use the Cli to install the plugin:
+
+```
+cordova plugin add org.apache.cordova.camera
+```
+
+- This plugin adds an object to the `navigator` global object called `camera` that has methods associated with it:
+
+```
+navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);
+```
+
+- Here is an example from the documentation with an option and all appropriate callbacks:
+
+```
+navigator.camera.getPicture(onSuccess, onFail, {
+	quality: 50,
+	destinationType: Camera.DestinationType.FILE_URI 
+});
+
+function onSuccess(imageURI) {
+	var image = document.getElementById('myImage');
+	image.src = imageURI;
+}
+
+function onFail(message) {
+	alert('Failed because: ' + message);
+}
+```
+
+- There are a number of options you can set to customize the camera action to your needs:
+
+```
+{ 
+	quality : 75,
+	destinationType : Camera.DestinationType.DATA_URL,
+	sourceType : Camera.PictureSourceType.CAMERA,
+	allowEdit : true,
+	encodingType: Camera.EncodingType.JPEG,
+	targetWidth: 100,
+	targetHeight: 100,
+	popoverOptions: CameraPopoverOptions,
+	saveToPhotoAlbum: false
+}
+```
+
+- Specifically important are the options `Camera.DestinationType.[option]`, which can save the picture as a binary file or a Base64 encoded string, and `Camera.PictureSourceType.[option]`, which can either take a new picture or select one from the camera roll.

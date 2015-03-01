@@ -1,14 +1,14 @@
 #Introduction to Phonegap / Cordova Two-Day
 
-[Day 1:](day_1/)
+###[Day 1:](day_1/)
 - Install phonegap and the command-line tools
 - Create a new project
 - Adding and removing plugins
-- Contact API
-- Filetransfer API
 - Camera API
+- Filetransfer API
+- Contact API
 
-[Day 2:](day_2/)
+###[Day 2:](day_2/)
 - In-app browser and oAuth
 - Splash screens
 - Geolocation and working with maps
