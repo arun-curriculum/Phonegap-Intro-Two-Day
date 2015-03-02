@@ -38,6 +38,15 @@ cordova create hello com.example.hello HelloWorld
 	- Plugins: This folder will hold all of the plugin-related code that comes in importing the plugin via the command line.
 	- Www: This folder will contain all of your HTML, CSS and JavaScript project files. Eventually it will be added to each platform's appropriate folder to be included in the main app.
 
+##Cordova.js
+- In order to run any native commands via JavaScript you have to include cordova.js in your project.
+- This file will not exist in your `www` directory but will be included upon build.
+- Make sure to include a link to the file in your main HTML document:
+
+```
+<script src="cordova.js"></script>
+```
+
 ##Cordova Plugins
 - Plugins are the modules of code that allow you to write JS commands that trigger native actions.
 - Most of the major native functionality is wrapped into various plugins, such as accessing the camera or pulling from the GPS.
@@ -117,6 +126,20 @@ function onFail(message) {
 - We will be creating a user manager app in class that will utilize a few Cordova APIs.
 - To start though, let's take some time and create a front-end for the application using AngularJS with HTML and CSS.
 - Your front end must have a user registration page that takes in a first name, last name, email, and profile picture.
+- On the registration page your app should have two options - take a new photo and select a photo from the camera roll.
+- When a user selects a photo have the app display the photo in an element of your choice.
 - It must also have a user list page where you can view all of the users in the database.
 - Lastly, the app must have a user detail page that provides information about a specific user.
 - **Bonus:** Implement Angular animations to smoothly transition between pages.
+
+##FileTransfer API
+- The FileTransfer API allows you to upload and download files using the native device.
+- This is especially useful for allowing users to upload photos from their device.
+- Let's take a look at the documentation [here](http://plugins.cordova.io/#/package/org.apache.cordova.file-transfer).
+- Here is our install command:
+
+```
+cordova plugin add org.apache.cordova.file-transfer
+```
+
+- This plugin offers a new constructor function `FileTransfer` that gives you methods for uploading and downloading the files.
