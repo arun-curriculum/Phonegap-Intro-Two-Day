@@ -130,6 +130,13 @@ function onFail(message) {
 - When a user selects a photo have the app display the photo in an element of your choice.
 - It must also have a user list page where you can view all of the users in the database.
 - Lastly, the app must have a user detail page that provides information about a specific user.
+- Here are the API endpoints you will need:
+	- `GET /members` -> Retrieve all members
+	- `GET /members/:id` -> Get one member
+	- `POST /members` -> Create a new member
+	- `PUT /members/:id` -> Update a member
+	- `DELETE /members/:id` -> Delete a member
+	- `POST /members/:id/photo` -> Upload a profile photo for a member
 - **Bonus:** Implement Angular animations to smoothly transition between pages.
 
 ##FileTransfer API
