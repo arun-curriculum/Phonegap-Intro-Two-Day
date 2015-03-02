@@ -143,3 +143,36 @@ cordova plugin add org.apache.cordova.file-transfer
 ```
 
 - This plugin offers a new constructor function `FileTransfer` that gives you methods for uploading and downloading the files.
+- To use the plugin we have to create an instance of the constructor:
+
+```
+var ft = new FileTransfer();
+```
+
+- You will likely need to set a number of options to configure your file transfer:
+
+```
+var options = {
+	fileKey: "file",
+	fileName: "sample",
+	params: { },
+	mimeType: "image/jpeg"
+};
+```
+
+- We can then call on the file transfer functions such as upload:
+
+```
+ft.upload(fileURL, encodeURI("url here"), success, error, options);
+```
+
+##FileTransfer Exercise: Photo Upload
+- Let's take the social network app we just created and add a file transfer component to it.
+- When a user takes or selects a photo let's use the FileTransfer API to send the file to the server.
+- Make sure to submit this request on success of the add user method so you can pass along the user id.
+- **Bonus:** Check out the `onprogress` event that is triggered throughout the transfer. Try to implement a simple progress bar that updates with the status of the upload.
+
+##Accessing Device Contacts
+- This API can be useful for adding contacts on behalf of users and also accessing the contact list for use in the app.
+- Let's take a look at the documentation [here](http://plugins.cordova.io/#/package/org.apache.cordova.contacts).
+- The contacts API appends to the `navigator` global object to apply its methods.
