@@ -176,3 +176,15 @@ ft.upload(fileURL, encodeURI("url here"), success, error, options);
 - This API can be useful for adding contacts on behalf of users and also accessing the contact list for use in the app.
 - Let's take a look at the documentation [here](http://plugins.cordova.io/#/package/org.apache.cordova.contacts).
 - The contacts API appends to the `navigator` global object to apply its methods.
+- The first method we will look at is the `create()` function that creates a new contact:
+
+```
+var myContact = navigator.contacts.create({"displayName": "Test User"});
+```
+
+- Try it by yourself to add a contact with a few additional fields.
+
+##Contacts Exercise: Add to Contacts
+- Let's take the social network and add a contacts component to it.
+- After the AJAX save and file upload try to add the contact to the contact database on the device.
+- **Bonus:** Check to see if the contact exists already on the device before saving it.
