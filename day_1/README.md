@@ -112,3 +112,11 @@ function onFail(message) {
 ```
 
 - Specifically important are the options `Camera.DestinationType.[option]`, which can save the picture as a binary file or a Base64 encoded string, and `Camera.PictureSourceType.[option]`, which can either take a new picture or select one from the camera roll.
+
+##In-Class Exercise: The Social Network
+- We will be creating a user manager app in class that will utilize a few Cordova APIs.
+- To start though, let's take some time and create a front-end for the application using AngularJS with HTML and CSS.
+- Your front end must have a user registration page that takes in a first name, last name, email, and profile picture.
+- It must also have a user list page where you can view all of the users in the database.
+- Lastly, the app must have a user detail page that provides information about a specific user.
+- **Bonus:** Implement Angular animations to smoothly transition between pages.
