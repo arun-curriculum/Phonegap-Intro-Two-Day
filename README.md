@@ -10,7 +10,6 @@
 
 ###[Day 2:](day_2/)
 - In-app browser and oAuth
-- Splash screens
 - Geolocation and working with maps
 - Deploying to the Google Play Store
 - Deploying to the iTunes Store
